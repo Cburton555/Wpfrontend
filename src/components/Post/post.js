@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Post.scss';
 
-const singlePost = (props) => (
+const Post = (props) => (
     <div className="Post">
         <h3>{props.title}</h3>
         <p dangerouslySetInnerHTML={{__html: props.body}}></p>
@@ -14,7 +14,7 @@ Post.propTypes = {
     body: PropTypes.string,
 };
 
-Post.defaultProps = { 
+Post.defaultProps = {
     title: "Post Title",
     body: "Post Body",
 };
