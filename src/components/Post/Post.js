@@ -1,15 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Post.scss';
+import '../Posts/Post.scss';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+import ListSubheader from '@material-ui/core/ListSubheader';
 
 const Post = (props) => (
-  <div className="Post">
-  <h3>{props.title}</h3>
-  <p>{props.author}</p>
-      <img src={props.authorImg}/>
+    <GridListTile>
+        <GridListTile key="Subheader" cols={6} style={{ height: 'auto' }}>
+            <ListSubheader component="div">{props.title}</ListSubheader>
+            <img src={props.featuredMedia} alt={props.title} />
+            <GridListTileBar
+                title={props.author}
+                subtitle={<span>by: {props.author}</span>}
+            />
+        </GridListTile>
+    </GridListTile>
 
-      </div>
-      );
+
+);
 Post.propTypes = {
     title: PropTypes.string,
     author: PropTypes.string,
